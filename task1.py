@@ -33,14 +33,15 @@ if ('G' in isa):
    
 if 'I' not in isa and 'E' not in isa:
     print("Invalid base integer")
-
+    sys.exit() 
+   
 if 'D' in isa and 'F' not in isa:
     isa = isa + 'F'
-    sys.exit() 
+    
 
 for x in "ABCDEFHIJKLMNPQSTUVX":                             
     if x in ext:                      
         pos = 25 - int(ord(x) - ord('A'))     
         ext_coverpoint = hex(2**pos)       
         coverpoints_list.append(f"misa && {ext_coverpoint} == {ext_coverpoint}")
-        print(f"misa && {ext_coverpoint} == {ext_coverpoint}")
+        print(coverpoints_list[-1])
